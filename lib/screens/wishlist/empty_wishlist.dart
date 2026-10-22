@@ -71,7 +71,7 @@ class EmptyWishlist extends StatelessWidget {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Theme.of(context).primaryColor,
-                      backgroundColor: kGrey200,
+                      backgroundColor: kPapyrusCream,
                     ),
                     onPressed: onSearchForItem,
                     child: Text(S.of(context).searchForItems.toUpperCase()),

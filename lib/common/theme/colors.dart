@@ -103,7 +103,10 @@ const kGrey900 = Color(0xFF263238);
 // blue-grey that reads cold against papyrus; every one of its call sites
 // is a muted foreground, so it tracks the palette's own muted brown.
 const kGrey600 = kPapyrusBrownLight;
-const kGrey200 = Color(0xFFEEEEEE);
+// Hairline dividers and 1px borders. Was #EEEEEE; the website has no grey
+// and draws these in tan. The few call sites that are surfaces rather than
+// lines name kPapyrusCream directly instead.
+const kGrey200 = kPapyrusTan;
 const kGrey400 = Color(0xFF90a4ae);
 const kErrorRed = Color(0xFFe74c3c);
 const kColorRed = Color(0xFFF3090B);

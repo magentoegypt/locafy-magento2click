@@ -18,7 +18,7 @@ class WebviewCheckoutSuccessScreen extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             }),
-        backgroundColor: kGrey200,
+        backgroundColor: kPapyrusCream,
         elevation: 0.0,
       ),
       body: Padding(

@@ -57,7 +57,7 @@ class MagentoPaymentState extends State<MagentoPayment> {
               widget.onFinish!(null);
               Navigator.of(context).pop();
             }),
-        backgroundColor: kGrey200,
+        backgroundColor: kPapyrusCream,
         elevation: 0.0,
       ),
     );
