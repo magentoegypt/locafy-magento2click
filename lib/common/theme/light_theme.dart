@@ -101,6 +101,7 @@ ThemeData buildLightTheme(String? language,
       labelStyle: TextStyle(fontSize: 13),
       unselectedLabelStyle: TextStyle(fontSize: 13),
     ),
+    bottomAppBarTheme: const BottomAppBarThemeData(color: kPapyrusCream),
     dialogBackgroundColor: kPapyrusCream,
     colorScheme: kColorScheme.copyWith(error: kErrorRed),
   );

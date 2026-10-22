@@ -123,7 +123,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> with ChangeLanguage {
             fontSize: 25.0,
             color: kGrey900,
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: kPapyrusSand,
           marginDescription: const EdgeInsets.fromLTRB(20.0, 75.0, 20.0, 0),
           styleDescription: const TextStyle(
             fontSize: 15.0,
@@ -147,7 +147,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> with ChangeLanguage {
     final isRequiredLogin = Services().widget.isRequiredLogin;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kPapyrusSand,
       body: SafeArea(child: Stack(
         children: [
           Consumer<AppModel>(builder: (context, _, __) {

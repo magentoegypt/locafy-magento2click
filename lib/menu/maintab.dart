@@ -269,6 +269,7 @@ class MainTabsState extends CustomOverlayState<MainTabs>
                   child: tabBarMenu(),
                 )
               : Container(
+                  color: Theme.of(context).bottomAppBarTheme.color,
                   // margin: const EdgeInsets.all(10),
                   // decoration: BoxDecoration(
                   //     color: AppColors.kPrimaryRed,

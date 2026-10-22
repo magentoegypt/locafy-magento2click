@@ -104,7 +104,7 @@ class _HomeSectionsViewState extends State<HomeSectionsView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFE8E8E8),
+      color: kPapyrusSand,
       child: FutureBuilder<List<HomeSection>>(
         future: _future,
         builder: (context, snapshot) {

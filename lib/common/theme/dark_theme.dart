@@ -69,6 +69,7 @@ ThemeData buildDarkTheme(String? language, [fontFamily, fontHeader]) {
       labelStyle: TextStyle(fontSize: 13),
       unselectedLabelStyle: TextStyle(fontSize: 13),
     ),
+    bottomAppBarTheme: const BottomAppBarThemeData(color: kDarkBgLight),
     dialogBackgroundColor: kDarkBG,
     colorScheme: kDarkColorScheme.copyWith(background: kDarkBG),
   );

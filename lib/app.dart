@@ -182,7 +182,9 @@ class AppState extends State<App>
     );
 
     return themeData.copyWith(
-      primaryColor: isDarkTheme ? Colors.white:Colors.black,//HexColor(mainColor),
+      // Was pinned to black/white, which overrode the palette: every widget
+      // reading Theme.of(context).primaryColor painted pure black.
+      primaryColor: isDarkTheme ? kPapyrusOliveLight : HexColor(mainColor),
       colorScheme: colorScheme,
       useMaterial3: appConfig.settings.useMaterial3,
     );

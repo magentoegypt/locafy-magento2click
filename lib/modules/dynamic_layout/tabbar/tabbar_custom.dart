@@ -1,3 +1,4 @@
+import 'package:magentoegypt/common/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:magentoegypt/common/extensions.dart';
 import 'package:magentoegypt/core/colors.dart';
@@ -134,7 +135,7 @@ class TabBarCustom extends StatelessWidget {
       indicatorSize: indicatorSize,
       indicatorColor: colorActiveIcon,
       indicator: BoxDecoration(
-        color: Colors.white.withOpacity(0.5),
+        color: kPapyrusBeige.withOpacity(0.5),
         borderRadius: BorderRadius.circular(5),
       ),
       unselectedLabelStyle: labelTextStyle,

@@ -235,17 +235,19 @@ class HeaderCategory extends StatelessWidget {
               margin: EdgeInsets.all(15),
               height: 50,
               decoration: BoxDecoration(
-                color: Colors.grey[200],
+                // The website's search input is cream with brown text.
+                color: kPapyrusCream,
                 borderRadius: BorderRadius.circular(30),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
-                  const Icon(Icons.search, color: Colors.grey),
+                  const Icon(Icons.search, color: kPapyrusBrownLight),
                   const SizedBox(width: 10),
                   Text(
                     S.of(context).search,
-                    style: TextStyle(color: Colors.grey[600], fontSize: 16),
+                    style: const TextStyle(
+                        color: kPapyrusBrownLight, fontSize: 16),
                   ),
                 ],
               ),
@@ -275,7 +277,7 @@ class HeaderAuthButtons extends StatelessWidget {
         if (userModel.loggedIn) return const SizedBox.shrink();
 
         return Container(
-          color: Colors.white,
+          color: kPapyrusSand,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -287,7 +289,7 @@ class HeaderAuthButtons extends StatelessWidget {
                     height: 48,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
+                        backgroundColor: kPapyrusOlive,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -314,7 +316,7 @@ class HeaderAuthButtons extends StatelessWidget {
                     height: 48,
                     child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: Colors.black, width: 2),
+                        side: const BorderSide(color: kPapyrusOlive, width: 2),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),

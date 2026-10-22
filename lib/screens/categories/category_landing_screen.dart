@@ -667,7 +667,7 @@ class _LandingProductCard extends StatelessWidget {
             Text(
               _formattedPrice(),
               style: TextStyle(
-                color: theme.colorScheme.secondary,
+                color: theme.colorScheme.primary,
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
               ),

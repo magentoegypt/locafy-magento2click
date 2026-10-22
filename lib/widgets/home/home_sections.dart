@@ -129,7 +129,7 @@ class HomeBannerHero extends StatelessWidget {
                       child: Text(
                         section.subtitle!.toUpperCase(),
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.9),
+                          color: kPapyrusCream.withOpacity(0.9),
                           fontSize: 13,
                           letterSpacing: 3,
                           fontWeight: FontWeight.w600,
@@ -140,7 +140,7 @@ class HomeBannerHero extends StatelessWidget {
                     section.title ?? '',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.playfairDisplay(
-                      color: Colors.white,
+                      color: kPapyrusCream,
                       fontSize: 40,
                       fontWeight: FontWeight.w600,
                       height: 1.1,
@@ -152,7 +152,7 @@ class HomeBannerHero extends StatelessWidget {
                       section.content!,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.92),
+                        color: kPapyrusCream.withOpacity(0.92),
                         fontSize: 14,
                         height: 1.5,
                       ),
@@ -242,7 +242,7 @@ class _CategoryCard extends StatelessWidget {
                       section.title ?? '',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.playfairDisplay(
-                        color: Colors.white,
+                        color: kPapyrusCream,
                         fontSize: 28,
                         fontWeight: FontWeight.w600,
                       ),
@@ -255,7 +255,7 @@ class _CategoryCard extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.9),
+                          color: kPapyrusCream.withOpacity(0.9),
                           fontSize: 13,
                           height: 1.4,
                         ),
@@ -348,7 +348,7 @@ class ShopAllBrandsButton extends StatelessWidget {
           S.of(context).shopAllBrands.toUpperCase(),
           textAlign: TextAlign.center,
           style: const TextStyle(
-            color: Colors.white,
+            color: kPapyrusCream,
             fontSize: 12,
             fontWeight: FontWeight.w700,
             letterSpacing: 2.4,
@@ -382,7 +382,7 @@ class BrandCard extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: kPapyrusCream,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(

@@ -157,7 +157,7 @@ class AddToBagSheet extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
+                backgroundColor: kPapyrusOlive,
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
@@ -165,7 +165,7 @@ class AddToBagSheet extends StatelessWidget {
               ),
               child: Text(
                 S.of(context).goToShoppingCart,
-                style: const TextStyle(color: Colors.white, fontSize: 16),
+                style: const TextStyle(color: kPapyrusCream, fontSize: 16),
               ),
             ),
           ),
