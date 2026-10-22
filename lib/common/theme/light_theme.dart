@@ -74,6 +74,12 @@ ThemeData buildLightTheme(String? language,
     scaffoldBackgroundColor: kLightBG,
     appBarTheme: const AppBarTheme(
       elevation: 0,
+      // Material 2 is on (useMaterial3 defaults to false), so an AppBar with
+      // no background of its own would fall through to colorScheme.primary --
+      // the olive -- and the brown title would sit on it at about 2:1. Most
+      // screens already set a light bar of their own; pin the rest to cream so
+      // they agree.
+      backgroundColor: kPapyrusCream,
       titleTextStyle: TextStyle(
         color: kPapyrusBrown,
         fontSize: 18.0,

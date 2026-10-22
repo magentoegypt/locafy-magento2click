@@ -46,7 +46,18 @@ ThemeData buildDarkTheme(String? language, [fontFamily, fontHeader]) {
       systemOverlayStyle: SystemUiOverlayStyle.light,
     ),
     buttonTheme: ButtonThemeData(
-        colorScheme: kDarkColorScheme.copyWith(onPrimary: kPapyrusCream)),
+        colorScheme: kDarkColorScheme.copyWith(onPrimary: kDarkBG)),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: kDarkBG,
+        backgroundColor: kPapyrusOliveLight,
+        minimumSize: const Size(120, 40),
+        padding: EdgeInsets.zero,
+        textStyle: const TextStyle(fontWeight: FontWeight.w500),
+        elevation: 1,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+      ),
+    ),
     pageTransitionsTheme: const PageTransitionsTheme(builders: {
       TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
       TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
@@ -58,8 +69,7 @@ ThemeData buildDarkTheme(String? language, [fontFamily, fontHeader]) {
       labelStyle: TextStyle(fontSize: 13),
       unselectedLabelStyle: TextStyle(fontSize: 13),
     ),
-    dialogBackgroundColor: kDarkBG, colorScheme: kDarkColorScheme.copyWith(
-      secondary: kDarkAccent,
-    ).copyWith(background: kDarkBG),
+    dialogBackgroundColor: kDarkBG,
+    colorScheme: kDarkColorScheme.copyWith(background: kDarkBG),
   );
 }

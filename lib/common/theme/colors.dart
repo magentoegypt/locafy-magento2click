@@ -60,13 +60,13 @@ const ColorScheme kColorScheme = ColorScheme(
 );
 
 const ColorScheme kDarkColorScheme = ColorScheme(
-  primary: kPapyrusOlive,
-  secondary: kPapyrusTerracotta,
+  primary: kPapyrusOliveLight,
+  secondary: kPapyrusTerracottaLight,
   surface: kGrey900,
   background: Colors.black,
   error: kErrorRed,
-  onPrimary: kPapyrusCream,
-  onSecondary: kPapyrusCream,
+  onPrimary: kDarkBG,
+  onSecondary: kDarkBG,
   onSurface: kSurfaceWhite,
   onBackground: kSurfaceWhite,
   onError: kSurfaceWhite,
@@ -89,6 +89,13 @@ const kPapyrusBeige = Color(0xFFE6D3A3); // swatches, secondary bars
 const kPapyrusSand = Color(0xFFF3E7C9); // page background
 const kPapyrusTan = Color(0xFFD4BD8A); // borders, secondary buttons
 const kPapyrusTanDark = Color(0xFF94804F); // stronger borders
+
+/// Dark-surface tints of the two brand colours. The olive and terracotta above
+/// are dark themselves -- they read well as fills under cream text, but as
+/// foreground on a dark background they sit near 2:1. These are the same hues
+/// lifted until they clear 4.5:1 on [kDarkBG], which is what dark mode uses.
+const kPapyrusOliveLight = Color(0xFF8FA05C);
+const kPapyrusTerracottaLight = Color(0xFFD98B63);
 
 /// basic colors
 const kGrey900 = Color(0xFF263238);
