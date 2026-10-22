@@ -300,7 +300,7 @@ class HeaderAuthButtons extends StatelessWidget {
                       child: Text(
                         S.of(context).login,
                         style: const TextStyle(
-                          color: Colors.white,
+                          color: kPapyrusCream,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -320,7 +320,7 @@ class HeaderAuthButtons extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        backgroundColor: Colors.white,
+                        backgroundColor: kPapyrusCream,
                       ),
                       onPressed: () {
                         NavigateTools.navigateRegister(context);
@@ -328,7 +328,7 @@ class HeaderAuthButtons extends StatelessWidget {
                       child: Text(
                         S.of(context).newcreateAccount,
                         style: const TextStyle(
-                          color: Colors.black,
+                          color: kPapyrusOlive,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),

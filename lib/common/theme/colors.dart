@@ -99,7 +99,10 @@ const kPapyrusTerracottaLight = Color(0xFFD98B63);
 
 /// basic colors
 const kGrey900 = Color(0xFF263238);
-const kGrey600 = Color(0xFF546E7A);
+// Muted secondary text and the chevrons on list rows. Was #546E7A, a
+// blue-grey that reads cold against papyrus; every one of its call sites
+// is a muted foreground, so it tracks the palette's own muted brown.
+const kGrey600 = kPapyrusBrownLight;
 const kGrey200 = Color(0xFFEEEEEE);
 const kGrey400 = Color(0xFF90a4ae);
 const kErrorRed = Color(0xFFe74c3c);

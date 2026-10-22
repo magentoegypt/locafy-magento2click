@@ -1081,7 +1081,7 @@ class SettingScreenState extends State<SettingScreen>
           );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: kPapyrusSand,
       body: Container(
         // decoration: const BoxDecoration(
         //   image: DecorationImage(
@@ -1201,7 +1201,7 @@ class SettingScreenState extends State<SettingScreen>
                                       height: 48,
                                       child: ElevatedButton(
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors.black,
+                                          backgroundColor: kPapyrusOlive,
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(8),
                                           ),
@@ -1212,7 +1212,7 @@ class SettingScreenState extends State<SettingScreen>
                                         child: Text(
                                           S.of(context).login,
                                           style: const TextStyle(
-                                            color: Colors.white,
+                                            color: kPapyrusCream,
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -1227,11 +1227,12 @@ class SettingScreenState extends State<SettingScreen>
                                       height: 48,
                                       child: OutlinedButton(
                                         style: OutlinedButton.styleFrom(
-                                          side: const BorderSide(color: Colors.black, width: 2),
+                                          side: const BorderSide(
+                                              color: kPapyrusOlive, width: 2),
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(8),
                                           ),
-                                          backgroundColor: Colors.white,
+                                          backgroundColor: kPapyrusCream,
                                         ),
                                         onPressed: () {
                                           NavigateTools.navigateRegister(context);
@@ -1239,7 +1240,7 @@ class SettingScreenState extends State<SettingScreen>
                                         child: Text(
                                           S.of(context).newcreateAccount,
                                           style: const TextStyle(
-                                            color: Colors.black,
+                                            color: kPapyrusOlive,
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
                                           ),
