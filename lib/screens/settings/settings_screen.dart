@@ -1773,7 +1773,7 @@ class HeaderSettingScreen extends StatelessWidget {
     return SafeArea(child: Container(
       width: screenSize.width,
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: kPapyrusSand,
         borderRadius: BorderRadius.only(
           bottomRight: Radius.circular(
               10.0), // Set the desired radius for the top left corner
@@ -1801,7 +1801,7 @@ class HeaderSettingScreen extends StatelessWidget {
             style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: Colors.black,
+              color: kPapyrusBrown,
             ),
           ),
           Spacer()
