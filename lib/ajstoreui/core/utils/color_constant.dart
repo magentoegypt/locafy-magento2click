@@ -2,17 +2,24 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ColorConstant {
+  /// Locafy "Papyrus" palette.
+  ///
+  /// The names below are historical -- they came from the generated design kit
+  /// this screen set was built against. The brand entries now carry the colours
+  /// the website runs, so `red800` is the olive accent and `red700` the
+  /// terracotta used for prices and sale badges. The canonical list, with
+  /// readable names, lives in lib/common/theme/colors.dart.
   static Color black9007f = fromHex('#7f050616');
 
   static Color black9007e = fromHex('#7e000000');
 
-  static Color red600 = fromHex('#ee1c24');
+  static Color red600 = fromHex('#a4502e'); // terracotta
 
   static Color blueA400 = fromHex('#1877f2');
 
-  static Color red8007e = fromHex('#7ecf2027');
+  static Color red8007e = fromHex('#7e4f5d2f'); // olive 49%
 
-  static Color red800 = fromHex('#cf2027');
+  static Color red800 = fromHex('#4f5d2f'); // olive, primary action
 
   static Color black90090 = fromHex('#90040516');
 
@@ -50,7 +57,7 @@ class ColorConstant {
 
   static Color whiteA70066 = fromHex('#66ffffff');
 
-  static Color red80001 = fromHex('#c1272d');
+  static Color red80001 = fromHex('#3a4522'); // olive, pressed
 
   static Color black90099 = fromHex('#99000000');
 
@@ -62,13 +69,13 @@ class ColorConstant {
 
   static Color black90014 = fromHex('#14000000');
 
-  static Color whiteA700 = fromHex('#ffffff');
+  static Color whiteA700 = fromHex('#fbf5e6'); // cream, card surface
 
   static Color black90059 = fromHex('#59000000');
 
   static Color black9005e = fromHex('#5e000000');
 
-  static Color red700 = fromHex('#ed1c24');
+  static Color red700 = fromHex('#a4502e'); // terracotta, sale badge
 
   static Color blueGray50 = fromHex('#f0f1f3');
 
@@ -76,11 +83,11 @@ class ColorConstant {
 
   static Color blueGray10002 = fromHex('#d1d5ea');
 
-  static Color gray50 = fromHex('#f9f9f9');
+  static Color gray50 = fromHex('#f3e7c9'); // papyrus, page background
 
   static Color lightGreen900 = fromHex('#428d00');
 
-  static Color black900 = fromHex('#000000');
+  static Color black900 = fromHex('#2f2216'); // brown, body text
 
   static Color pinkA400 = fromHex('#f00073');
 
@@ -92,7 +99,7 @@ class ColorConstant {
 
   static Color whiteA7006c = fromHex('#6cffffff');
 
-  static Color red60001 = fromHex('#e92728');
+  static Color red60001 = fromHex('#a4502e'); // terracotta
 
   static Color gray500 = fromHex('#adadad');
 
@@ -104,13 +111,13 @@ class ColorConstant {
 
   static Color gray100 = fromHex('#f4f2f2');
 
-  static Color yellow90002 = fromHex('#ff841d');
+  static Color yellow90002 = fromHex('#a4502e'); // terracotta
 
-  static Color yellow90001 = fromHex('#f77e2e');
+  static Color yellow90001 = fromHex('#a4502e'); // terracotta
 
   static Color lightBlue70001 = fromHex('#0088cc');
 
-  static Color red80063 = fromHex('#63cf2027');
+  static Color red80063 = fromHex('#634f5d2f'); // olive 39%
 
   static Color whiteA70005 = fromHex('#05ffffff');
 

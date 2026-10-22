@@ -656,18 +656,18 @@ class _LandingProductCard extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF222222),
+                  color: theme.colorScheme.onSurface,
                 ),
               ),
             ),
             const SizedBox(height: 12),
             Text(
               _formattedPrice(),
-              style: const TextStyle(
-                color: Color(0xFFCF2027),
+              style: TextStyle(
+                color: theme.colorScheme.secondary,
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
               ),

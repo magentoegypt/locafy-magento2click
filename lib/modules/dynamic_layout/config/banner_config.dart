@@ -246,20 +246,20 @@ class BannerItemConfig {
 
 class BannerButtonConfig {
   String text = '';
-  String backgroundColor = '#3FC1BE';
-  String textColor = '#3FC1BE';
+  String backgroundColor = '#4F5D2F';
+  String textColor = '#FBF5E6';
   Alignment alignment = Alignment.topCenter;
 
   BannerButtonConfig(
       {this.text = '',
-      this.backgroundColor = '#3FC1BE',
-      this.textColor = '#3FC1BE',
+      this.backgroundColor = '#4F5D2F',
+      this.textColor = '#FBF5E6',
       this.alignment = Alignment.topCenter});
 
   BannerButtonConfig.fromJson(Map json) {
     text = json['text'] ?? '';
-    backgroundColor = json['backgroundColor'] ?? '#3FC1BE';
-    textColor = json['textColor'] ?? '#3FC1BE';
+    backgroundColor = json['backgroundColor'] ?? '#4F5D2F';
+    textColor = json['textColor'] ?? '#FBF5E6';
     alignment = Alignment(json['x'] ?? 0.0, json['y'] ?? 0.0);
   }
 

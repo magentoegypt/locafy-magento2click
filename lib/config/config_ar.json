@@ -54,8 +54,8 @@
                     "image": "assets/images/HomeTopBanner.png",
                     "showDescription": false,
                     "colors": [
-                        "#3CC2BF",
-                        "#3CC2BF"
+                        "#4F5D2F",
+                        "#4F5D2F"
                     ]
                 },
                 {
@@ -63,8 +63,8 @@
                     "image": "assets/images/gutrah.png",
                     "showDescription": false,
                     "colors": [
-                        "#3E6AB5",
-                        "#3E6AB5"
+                        "#6E5A3F",
+                        "#6E5A3F"
                     ]
                 },
                 {
@@ -72,8 +72,8 @@
                     "image": "assets/images/underwear.png",
                     "showDescription": false,
                     "colors": [
-                        "#53A2CC",
-                        "#53A2CC"
+                        "#A4502E",
+                        "#A4502E"
                     ]
                 },
                 {
@@ -81,8 +81,8 @@
                     "image": "assets/images/thobe.png",
                     "showDescription": false,
                     "colors": [
-                        "#53688A",
-                        "#53688A"
+                        "#94804F",
+                        "#94804F"
                     ]
                 }
             ]
@@ -137,7 +137,7 @@
         }
     ],
     "Setting": {
-        "MainColor": "#CF2027",
+        "MainColor": "#4F5D2F",
         "FontFamily": "El Messiri",
         "ProductListLayout": "list",
         "StickyHeader": false

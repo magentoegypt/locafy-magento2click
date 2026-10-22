@@ -1,7 +1,7 @@
 import '../../constants.dart';
 
 class ThemeConfig {
-  String mainColor = '#3FC1BE';
+  String mainColor = '#4F5D2F';
   String? logoImage;
   String? backgroundColor;
   String? primaryColorLight;
@@ -11,7 +11,7 @@ class ThemeConfig {
   String get logo => logoImage ?? kLogo;
 
   ThemeConfig({
-    this.mainColor = '#3FC1BE',
+    this.mainColor = '#4F5D2F',
     this.logoImage,
     this.backgroundColor,
     this.primaryColorLight,
@@ -20,7 +20,7 @@ class ThemeConfig {
   });
 
   ThemeConfig.fromJson(Map config) {
-    mainColor = config['MainColor'] ?? '#3FC1BE';
+    mainColor = config['MainColor'] ?? '#4F5D2F';
     logoImage = config['logo'];
     backgroundColor = config['backgroundColor'];
     primaryColorLight = config['primaryColorLight'];

@@ -8,7 +8,7 @@ import 'fade_through_transition.dart';
 import 'fonts.dart';
 
 IconThemeData customIconTheme(IconThemeData original) {
-  return original.copyWith(color: kGrey900);
+  return original.copyWith(color: kPapyrusBrown);
 }
 
 ThemeData buildLightTheme(String? language,
@@ -25,7 +25,8 @@ ThemeData buildLightTheme(String? language,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.white,
+        foregroundColor: kPapyrusCream,
+        backgroundColor: kPapyrusOlive,
         minimumSize: const Size(120, 40),
         padding: EdgeInsets.zero,
         textStyle: const TextStyle(
@@ -56,30 +57,30 @@ ThemeData buildLightTheme(String? language,
 
   return base.copyWith(
     brightness: Brightness.light,
-    cardColor: Colors.white,
+    cardColor: kPapyrusCream,
     buttonTheme: const ButtonThemeData(
       colorScheme: kColorScheme,
       textTheme: ButtonTextTheme.normal,
-      buttonColor: kDarkBG,
+      buttonColor: kPapyrusOlive,
     ),
-    primaryColorLight: kLightBG,
+    primaryColorLight: kPapyrusCream,
     primaryIconTheme: customIconTheme(base.iconTheme),
     textTheme: buildTextTheme(base.textTheme, language, fontFamily, fontHeader),
     primaryTextTheme:
         buildTextTheme(base.primaryTextTheme, language, fontFamily, fontHeader),
     iconTheme: customIconTheme(base.iconTheme),
-    hintColor: Colors.black26,
+    hintColor: kPapyrusBrownLight,
     primaryColor: kLightPrimary,
     scaffoldBackgroundColor: kLightBG,
     appBarTheme: const AppBarTheme(
       elevation: 0,
       titleTextStyle: TextStyle(
-        color: kDarkBG,
+        color: kPapyrusBrown,
         fontSize: 18.0,
         fontWeight: FontWeight.w800,
       ),
       iconTheme: IconThemeData(
-        color: kLightAccent,
+        color: kPapyrusBrown,
       ),
       systemOverlayStyle: SystemUiOverlayStyle.dark,
     ),
@@ -88,18 +89,13 @@ ThemeData buildLightTheme(String? language,
       TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
     }),
     tabBarTheme: const TabBarThemeData(
-      labelColor: Colors.black,
-      unselectedLabelColor: Colors.black,
+      labelColor: kPapyrusBrown,
+      unselectedLabelColor: kPapyrusBrownLight,
       labelPadding: EdgeInsets.zero,
       labelStyle: TextStyle(fontSize: 13),
       unselectedLabelStyle: TextStyle(fontSize: 13),
     ),
-    dialogBackgroundColor: kLightBG,
-    colorScheme: kColorScheme
-        .copyWith(
-          secondary: kLightAccent,
-        )
-        .copyWith(background: Colors.white)
-        .copyWith(error: kErrorRed),
+    dialogBackgroundColor: kPapyrusCream,
+    colorScheme: kColorScheme.copyWith(error: kErrorRed),
   );
 }

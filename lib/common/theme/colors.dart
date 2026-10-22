@@ -46,38 +46,51 @@ Color? get lightSecondaryColor =>
 
 /// Color theme
 const ColorScheme kColorScheme = ColorScheme(
-  primary: kTeal100,
-  secondary: kTeal50,
-  surface: kSurfaceWhite,
-  background: Colors.white,
+  primary: kPapyrusOlive,
+  secondary: kPapyrusTerracotta,
+  surface: kPapyrusCream,
+  background: kPapyrusSand,
   error: kErrorRed,
-  onPrimary: kDarkBG,
-  onSecondary: kGrey900,
-  onSurface: kGrey900,
-  onBackground: kGrey900,
-  onError: kSurfaceWhite,
+  onPrimary: kPapyrusCream,
+  onSecondary: kPapyrusCream,
+  onSurface: kPapyrusBrown,
+  onBackground: kPapyrusBrown,
+  onError: kPapyrusCream,
   brightness: Brightness.light,
 );
 
 const ColorScheme kDarkColorScheme = ColorScheme(
-  primary: kTeal100,
-  secondary: kTeal50,
+  primary: kPapyrusOlive,
+  secondary: kPapyrusTerracotta,
   surface: kGrey900,
   background: Colors.black,
   error: kErrorRed,
-  onPrimary: kLightBG,
-  onSecondary: kGrey900,
+  onPrimary: kPapyrusCream,
+  onSecondary: kPapyrusCream,
   onSurface: kSurfaceWhite,
-  onBackground: kGrey900,
+  onBackground: kSurfaceWhite,
   onError: kSurfaceWhite,
   brightness: Brightness.dark,
 );
 
-/// basic colors
-const kTeal50 = Color(0xFFE0F2F1);
-const kTeal100 = Color(0xFF3FC1BE);
+/// Locafy "Papyrus" palette.
+///
+/// These mirror the theme the website runs (https://locafy.magento2.click):
+/// [kPapyrusBrown] is its `--primary-color`, [kPapyrusOlive] its
+/// `--accent-color` and [kPapyrusBeige] its `--bg-light`. Keep the two in sync
+/// -- if the site's palette moves, change it here and nowhere else.
+const kPapyrusOlive = Color(0xFF4F5D2F); // header bar, primary action
+const kPapyrusOliveDark = Color(0xFF3A4522); // pressed/hover olive
+const kPapyrusBrown = Color(0xFF2F2216); // headings, links, icons
+const kPapyrusBrownLight = Color(0xFF6E5A3F); // body and secondary text
+const kPapyrusTerracotta = Color(0xFFA4502E); // prices, sale badges
+const kPapyrusCream = Color(0xFFFBF5E6); // cards, text on olive
+const kPapyrusBeige = Color(0xFFE6D3A3); // swatches, secondary bars
+const kPapyrusSand = Color(0xFFF3E7C9); // page background
+const kPapyrusTan = Color(0xFFD4BD8A); // borders, secondary buttons
+const kPapyrusTanDark = Color(0xFF94804F); // stronger borders
 
-const kTeal400 = Color(0xFF26A69A);
+/// basic colors
 const kGrey900 = Color(0xFF263238);
 const kGrey600 = Color(0xFF546E7A);
 const kGrey200 = Color(0xFFEEEEEE);
@@ -91,11 +104,11 @@ const textColorBlack = Color(0xFF000000);
 const textColorBlackLight = Color(0x99000000);
 
 /// color for theme
-const kLightPrimary = Color(0xfffcfcff);
-const kLightAccent = Color(0xFF546E7A);
+const kLightPrimary = kPapyrusCream;
+const kLightAccent = kPapyrusBrownLight;
 const kDarkAccent = Color(0xffF4F5F5);
 
-const kLightBG = Color(0xffFAFAFA);
+const kLightBG = kPapyrusSand;
 const kDarkBG = Color(0xff1B1D26);
 const kDarkBgLight = Color(0xff282D39);
 

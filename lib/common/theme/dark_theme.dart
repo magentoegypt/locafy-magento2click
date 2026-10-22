@@ -18,14 +18,14 @@ ThemeData buildDarkTheme(String? language, [fontFamily, fontHeader]) {
     ),
     textTheme:
         buildTextTheme(base.textTheme, language, fontFamily, fontHeader).apply(
-      displayColor: kLightBG,
-      bodyColor: kLightBG,
+      displayColor: kPapyrusCream,
+      bodyColor: kPapyrusCream,
     ),
     primaryTextTheme:
         buildTextTheme(base.primaryTextTheme, language, fontFamily, fontHeader)
             .apply(
-      displayColor: kLightBG,
-      bodyColor: kLightBG,
+      displayColor: kPapyrusCream,
+      bodyColor: kPapyrusCream,
     ),
     canvasColor: kDarkBG,
     cardColor: kDarkBgLight,
@@ -36,7 +36,7 @@ ThemeData buildDarkTheme(String? language, [fontFamily, fontHeader]) {
     appBarTheme: const AppBarTheme(
       elevation: 0,
       titleTextStyle: TextStyle(
-        color: kDarkBG,
+        color: kPapyrusCream,
         fontSize: 18.0,
         fontWeight: FontWeight.w800,
       ),
@@ -46,7 +46,7 @@ ThemeData buildDarkTheme(String? language, [fontFamily, fontHeader]) {
       systemOverlayStyle: SystemUiOverlayStyle.light,
     ),
     buttonTheme: ButtonThemeData(
-        colorScheme: kColorScheme.copyWith(onPrimary: kLightBG)),
+        colorScheme: kDarkColorScheme.copyWith(onPrimary: kPapyrusCream)),
     pageTransitionsTheme: const PageTransitionsTheme(builders: {
       TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
       TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),

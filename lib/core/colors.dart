@@ -31,19 +31,26 @@ import 'package:flutter/material.dart';
 // }
 
 class AppColors {
-  static Color kPrimaryBlue = fromHex('#1C468C');
+  /// Locafy "Papyrus" palette.
+  ///
+  /// The names below are historical -- they came from the generated design kit
+  /// this screen set was built against. The brand entries now carry the colours
+  /// the website runs, so `kPrimaryRed` is the olive accent and `kPrimaryBlue`
+  /// the terracotta used alongside it. The canonical list, with readable names,
+  /// lives in lib/common/theme/colors.dart.
+  static Color kPrimaryBlue = fromHex('#a4502e'); // terracotta, secondary accent
 
   static Color black9007f = fromHex('#7f050616');
 
   static Color black9007e = fromHex('#7e000000');
 
-  static Color red600 = fromHex('#ee1c24');
+  static Color red600 = fromHex('#a4502e');
 
   static Color blueA400 = fromHex('#1877f2');
 
-  static Color red8007e = fromHex('#7ecf2027');
+  static Color red8007e = fromHex('#7e4f5d2f');
 
-  static Color kPrimaryRed = fromHex('#cf2027');
+  static Color kPrimaryRed = fromHex('#4f5d2f'); // olive, primary action
 
   static Color black90090 = fromHex('#90040516');
 
@@ -81,7 +88,7 @@ class AppColors {
 
   static Color whiteA70066 = fromHex('#66ffffff');
 
-  static Color red80001 = fromHex('#c1272d');
+  static Color red80001 = fromHex('#3a4522');
 
   static Color black90099 = fromHex('#99000000');
 
@@ -99,7 +106,7 @@ class AppColors {
 
   static Color black9005e = fromHex('#5e000000');
 
-  static Color red700 = fromHex('#ed1c24');
+  static Color red700 = fromHex('#a4502e');
 
   static Color blueGray50 = fromHex('#f0f1f3');
 
@@ -111,7 +118,7 @@ class AppColors {
 
   static Color lightGreen900 = fromHex('#428d00');
 
-  static Color black900 = fromHex('#000000');
+  static Color black900 = fromHex('#2f2216'); // brown, body text
 
   static Color pinkA400 = fromHex('#f00073');
 
@@ -123,7 +130,7 @@ class AppColors {
 
   static Color whiteA7006c = fromHex('#6cffffff');
 
-  static Color red60001 = fromHex('#e92728');
+  static Color red60001 = fromHex('#a4502e');
 
   static Color gray500 = fromHex('#adadad');
 
@@ -135,21 +142,21 @@ class AppColors {
 
   static Color gray100 = fromHex('#f4f2f2');
 
-  static Color yellow90002 = fromHex('#ff841d');
+  static Color yellow90002 = fromHex('#a4502e');
 
-  static Color yellow90001 = fromHex('#f77e2e');
+  static Color yellow90001 = fromHex('#a4502e');
 
   static Color lightBlue70001 = fromHex('#0088cc');
 
-  static Color red80063 = fromHex('#63cf2027');
+  static Color red80063 = fromHex('#634f5d2f');
 
   static Color whiteA70005 = fromHex('#05ffffff');
 
   static Color pinkA4000c = fromHex('#0ce4003b');
 
-  static Color colorIcon = fromHex('#878787');
+  static Color colorIcon = fromHex('#6e5a3f'); // inactive tab icon
 
-  static Color colorActiveIcon = fromHex('#000000');
+  static Color colorActiveIcon = fromHex('#2f2216'); // active tab icon
 
   static Color textColor(BuildContext context) {
     bool isDarkTheme = Theme.of(context).brightness == Brightness.dark;

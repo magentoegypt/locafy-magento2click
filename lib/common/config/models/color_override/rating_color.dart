@@ -9,7 +9,7 @@ class RatingColor {
 
   RatingColor({
     this.primaryStar = const Color(0xfff39c12),
-    this.borderStar = const Color(0xff3fc1be),
+    this.borderStar = const Color(0xffD4BD8A),
     this.primaryLinearProgress = const Color(0xfff39c12),
     this.backgroundLinearProgress = const Color(0xffF1F2F3),
   });
@@ -17,7 +17,7 @@ class RatingColor {
   factory RatingColor.fromJson(Map<String, dynamic> json) {
     return RatingColor(
       primaryStar: HexColor(json['primaryStar'] ?? 'f39c12'),
-      borderStar: HexColor(json['borderStar'] ?? '3fc1be'),
+      borderStar: HexColor(json['borderStar'] ?? 'D4BD8A'),
       primaryLinearProgress:
           HexColor(json['primaryLinearProgress'] ?? 'f39c12'),
       backgroundLinearProgress:

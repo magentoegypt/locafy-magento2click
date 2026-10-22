@@ -44,7 +44,7 @@ class ProductShortDescription extends StatelessWidget {
               content: Text(
                 utf8.decode(coupon),
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      color: const Color(0xFF750B2B),
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
               ),
               action: SnackBarAction(

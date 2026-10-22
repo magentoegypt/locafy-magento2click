@@ -113,9 +113,9 @@ class _ProductCardState extends State<ProductCard> with ActionButtonMixin {
           child: ProductPricing(
             product: widget.item,
             hide: widget.config.hidePrice,
-            // Blue current price to match the design; struck-through original
-            // price keeps its grey styling.
-            mainPriceColor: const Color(0xFF1273EB),
+            // Terracotta current price, as the website prints it;
+            // struck-through original price keeps its grey styling.
+            mainPriceColor: Theme.of(context).colorScheme.secondary,
           ),
         ),
         // Colour options (as product-image circles) + size chips, below price.

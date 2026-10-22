@@ -6,7 +6,7 @@ class TextConfig {
   String text = '';
   String? fontFamily;
   double fontSize = 20.0;
-  String color = '#3FC1BE';
+  String color = '#2F2216';
   bool enableShadow = false;
 
   Alignment alignment = Alignment.topCenter;
@@ -15,7 +15,7 @@ class TextConfig {
     this.text = '',
     this.fontFamily,
     this.fontSize = 20.0,
-    this.color = '#3FC1BE',
+    this.color = '#2F2216',
     this.alignment = Alignment.topCenter,
     this.enableShadow = false,
   });
@@ -24,7 +24,7 @@ class TextConfig {
     text = json['text'] ?? '';
     fontFamily = json['fontFamily'] ?? 'El Messiri';
     fontSize = Helper.formatDouble(json['fontSize']) ?? 20.0;
-    color = json['color'] ?? '#3FC1BE';
+    color = json['color'] ?? '#2F2216';
     alignment = Alignment(Helper.formatDouble(json['x']) ?? 0.0,
         Helper.formatDouble(json['y']) ?? 0.0);
     enableShadow = json['enableShadow'] ?? false;

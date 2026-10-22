@@ -75,14 +75,14 @@ class _OnBoardScreenState extends State<OnBoardScreen> with ChangeLanguage {
                   child: Text(
                     S.of(context).signIn,
                     style: const TextStyle(
-                      color: kTeal400,
+                      color: kPapyrusOlive,
                       fontSize: 20.0,
                     ),
                   ),
                 ),
                 const Text(
                   '    |    ',
-                  style: TextStyle(color: kTeal400, fontSize: 20.0),
+                  style: TextStyle(color: kPapyrusOlive, fontSize: 20.0),
                 ),
                 GestureDetector(
                   onTap: () async {
@@ -95,7 +95,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> with ChangeLanguage {
                   child: Text(
                     S.of(context).signUp,
                     style: const TextStyle(
-                      color: kTeal400,
+                      color: kPapyrusOlive,
                       fontSize: 20.0,
                     ),
                   ),
@@ -184,14 +184,14 @@ class _OnBoardScreenState extends State<OnBoardScreen> with ChangeLanguage {
                              child: Text(
                                S.of(context).signIn,
                                style: const TextStyle(
-                                 color: kTeal400,
+                                 color: kPapyrusOlive,
                                  fontSize: 20.0,
                                ),
                              ),
                            ),
                            const Text(
                              '    |    ',
-                             style: TextStyle(color: kTeal400, fontSize: 20.0),
+                             style: TextStyle(color: kPapyrusOlive, fontSize: 20.0),
                            ),
                            GestureDetector(
                              onTap: () async {
@@ -204,7 +204,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> with ChangeLanguage {
                              child: Text(
                                S.of(context).signUp,
                                style: const TextStyle(
-                                 color: kTeal400,
+                                 color: kPapyrusOlive,
                                  fontSize: 20.0,
                                ),
                              ),

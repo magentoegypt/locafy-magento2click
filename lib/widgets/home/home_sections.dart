@@ -21,7 +21,7 @@ class HomeSectionHeading extends StatelessWidget {
     this.subtitle,
     this.title,
     this.content,
-    this.accentColor = const Color(0xFF3D5AFE),
+    this.accentColor = kPapyrusOlive,
   });
 
   @override
