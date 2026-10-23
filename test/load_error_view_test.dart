@@ -1,15 +1,17 @@
 // LoadErrorView stands in for content that failed to load, so a screen whose
 // request failed says so and offers a retry instead of rendering blank. The
-// home tab and the Search tab both went blank when the backend refused this
-// network with a 403, because every failure used to come back as an empty list
+// home tab and the Search tab both went blank when the backend stopped
+// answering in time, because every failure used to come back as an empty list
 // that looked exactly like "nothing to show".
 //
-// The message rides on the same isNoInternetError contract that
-// test/no_internet_error_test.dart pins: a request that never left the device
-// says "No internet connection", and anything else -- a server that answered
-// but refused, an error status -- gets the general message. Telling someone
-// whose connection is fine that they have no internet sends them off to fix
-// the wrong thing, which is the case the first test guards.
+// It never tells anyone they have no internet. makeRequest in inspireui's
+// http_client throws the same 'No Internet Connection' for a request that
+// timed out and for a host that couldn't be found, and the server this was
+// written against took 36s+ to answer against a 20s timeout -- so an online
+// phone was being told it was offline, and sent off to fix its wifi. A
+// request that got no answer now reads "couldn't reach the server", which is
+// true whichever it was; one the server answered with an error reads
+// "couldn't load this".
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -27,7 +29,7 @@ void main() {
   group('LoadErrorView', () {
     testWidgets('a refused request does not claim there is no internet',
         (tester) async {
-      // What MagentoService throws for the 403 this was written against.
+      // What MagentoService throws when the server answers with an error status.
       await tester.pumpWidget(_host(LoadErrorView(
         error: 'Categories request failed: HTTP 403',
         onRetry: () async {},
@@ -41,17 +43,21 @@ void main() {
       expect(find.text('No internet connection'), findsNothing);
     });
 
-    testWidgets('a request that never left the device says so',
-        (tester) async {
-      // What makeRequest in inspireui's http_client throws for a dropped
-      // socket.
+    testWidgets('a timeout says the server was unreachable, not that the phone '
+        'is offline', (tester) async {
+      // What makeRequest throws on its 20s timeout -- and, identically, for a
+      // failed host lookup. This is the message an online phone was shown.
       await tester.pumpWidget(_host(LoadErrorView(
         error: 'No Internet Connection',
         onRetry: () async {},
       )));
       await tester.pumpAndSettle();
 
-      expect(find.text('No internet connection'), findsOneWidget);
+      expect(
+        find.text("We couldn't reach the server. Please try again."),
+        findsOneWidget,
+      );
+      expect(find.text('No internet connection'), findsNothing);
     });
 
     testWidgets('retry re-issues the request and survives it failing again',

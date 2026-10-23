@@ -323,6 +323,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "conversations": MessageLookupByLibrary.simpleMessage("المحادثات"),
         "couldNotLoadContent": MessageLookupByLibrary.simpleMessage(
             "تعذّر تحميل المحتوى حاليًا. يرجى المحاولة مرة أخرى."),
+        "couldNotReachServer": MessageLookupByLibrary.simpleMessage(
+            "تعذّر الوصول إلى الخادم. يرجى المحاولة مرة أخرى."),
         "country": MessageLookupByLibrary.simpleMessage("البلد"),
         "countryIsRequired":
             MessageLookupByLibrary.simpleMessage("خانة الدولة مطلوبة"),

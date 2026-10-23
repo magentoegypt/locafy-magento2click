@@ -325,6 +325,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "conversations": MessageLookupByLibrary.simpleMessage("Conversations"),
         "couldNotLoadContent": MessageLookupByLibrary.simpleMessage(
             "We couldn't load this right now. Please try again."),
+        "couldNotReachServer": MessageLookupByLibrary.simpleMessage(
+            "We couldn't reach the server. Please try again."),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
         "countryIsRequired": MessageLookupByLibrary.simpleMessage(
             "The country field is required"),

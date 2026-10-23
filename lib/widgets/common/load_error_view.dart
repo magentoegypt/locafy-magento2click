@@ -4,12 +4,16 @@ import 'package:inspireui/extensions/string_extension.dart';
 import '../../generated/l10n.dart';
 
 /// Takes the place of content that failed to load, so a screen whose request
-/// was refused, timed out or never left the device says so and offers a retry,
-/// instead of rendering blank.
+/// failed says so and offers a retry, instead of rendering blank.
 ///
-/// Not [NoInternetConnection]: that one always reads "No internet connection",
-/// which is wrong when the server answered but refused to serve the content,
-/// and its spinner is a file-level flag shared by every instance on screen.
+/// It never says "No internet connection". The HTTP layer reports a timeout
+/// and a failed host lookup with the same error, so this view can't tell a
+/// slow server from a dropped connection -- and the server this was built
+/// against took 36s+ to answer, so a phone that was online kept being told it
+/// was offline. "Couldn't reach the server" is true whichever it was.
+///
+/// Not [NoInternetConnection]: that one always says "no internet", and its
+/// spinner is a file-level flag shared by every instance on screen.
 class LoadErrorView extends StatefulWidget {
   const LoadErrorView({super.key, required this.onRetry, this.error});
 
@@ -17,9 +21,9 @@ class LoadErrorView extends StatefulWidget {
   /// returned future completes, whether it succeeds or fails again.
   final Future<void> Function() onRetry;
 
-  /// What went wrong. Only used to pick the message: a connection that never
-  /// left the device reads differently from a server that answered but would
-  /// not serve the content.
+  /// What went wrong. Only used to pick the message: a request that never got
+  /// an answer (timed out, or the host couldn't be found) reads differently
+  /// from one the server answered with an error.
   final Object? error;
 
   @override
@@ -44,7 +48,8 @@ class _LoadErrorViewState extends State<LoadErrorView> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final offline = '${widget.error ?? ''}'.isNoInternetError;
+    // makeRequest's catch-all for a timeout or a failed host lookup.
+    final unreachable = '${widget.error ?? ''}'.isNoInternetError;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 48),
@@ -52,14 +57,14 @@ class _LoadErrorViewState extends State<LoadErrorView> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
-            offline ? Icons.wifi_off_rounded : Icons.cloud_off_rounded,
+            unreachable ? Icons.cloud_off_rounded : Icons.error_outline_rounded,
             size: 48,
             color: theme.colorScheme.onSurface.withOpacity(0.55),
           ),
           const SizedBox(height: 16),
           Text(
-            offline
-                ? S.of(context).noInternetConnection
+            unreachable
+                ? S.of(context).couldNotReachServer
                 : S.of(context).couldNotLoadContent,
             textAlign: TextAlign.center,
             style: theme.textTheme.bodyLarge

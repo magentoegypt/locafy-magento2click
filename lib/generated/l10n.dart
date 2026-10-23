@@ -9037,6 +9037,16 @@ class S {
     );
   }
 
+  /// `We couldn't reach the server. Please try again.`
+  String get couldNotReachServer {
+    return Intl.message(
+      'We couldn\'t reach the server. Please try again.',
+      name: 'couldNotReachServer',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Failed to load application configuration. Please try again or restart your application.`
   String get failedToLoadAppConfig {
     return Intl.message(
