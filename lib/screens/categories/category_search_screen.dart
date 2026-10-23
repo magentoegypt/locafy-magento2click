@@ -9,6 +9,7 @@ import 'package:magentoegypt/ajstoreui/widgets/app_bar/appbar_title.dart';
 import 'package:magentoegypt/models/SearchResponse.dart';
 import 'package:magentoegypt/services/base_services.dart';
 import 'package:provider/provider.dart';
+import '../../common/config.dart' show kLoadingWidget;
 import '../../common/constants.dart';
 import '../../generated/l10n.dart';
 import '../../models/index.dart'
@@ -17,6 +18,7 @@ import '../../menu/maintab_delegate.dart';
 import '../../modules/dynamic_layout/tabbar/tabbar_icon.dart';
 import '../../routes/flux_navigate.dart';
 import '../../services/services.dart';
+import '../../widgets/common/load_error_view.dart';
 import '../../widgets/common/tree_view.dart';
 import '../common/app_bar_mixin.dart';
 import '../index.dart' show SearchBox, SubItem, CartScreenArgument;
@@ -353,7 +355,9 @@ class _CategorySearchState<T> extends State<CategorySearch> with AppBarMixin {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    if(tabs.length>0)
+                    if(tabs.isEmpty)
+                      Expanded(child: _buildCategoriesUnavailable(categoryModel))
+                    else
                       Expanded(
                         child: Align(
                           alignment: Alignment.topCenter,
@@ -374,6 +378,26 @@ class _CategorySearchState<T> extends State<CategorySearch> with AppBarMixin {
         ),
       ),
     );
+  }
+
+  /// Stands in for the category tabs and list when there are none to show.
+  ///
+  /// They come from the category tree loaded at startup, so with no tabs the
+  /// screen is either still waiting on it, or it failed — which used to leave
+  /// this screen blank under the search field with no way to try again.
+  Widget _buildCategoriesUnavailable(CategoryModel categoryModel) {
+    if (categoryModel.isLoading) {
+      return Center(child: kLoadingWidget(context));
+    }
+    if (categoryModel.loadError != null) {
+      return Center(
+        child: LoadErrorView(
+          error: categoryModel.loadError,
+          onRetry: categoryModel.reloadCategories,
+        ),
+      );
+    }
+    return const SizedBox();
   }
 
   /// Rounded "Search" entry point — tapping it opens the full search screen.

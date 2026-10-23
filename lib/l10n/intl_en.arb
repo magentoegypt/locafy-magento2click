@@ -918,6 +918,7 @@
 	"doesNotSupportApplePay": "ApplePay is not supported. Please check your wallet and card",
 	"currencyIsNotSupported": "{currency} is not supported",
 	"retry": "Retry",
+	"couldNotLoadContent": "We couldn't load this right now. Please try again.",
 	"failedToLoadAppConfig": "Failed to load application configuration. Please try again or restart your application.",
 	"yourAccountIsUnderReview": "Your account is under review. Please contact the administrator if you need any help.",
 	"newAppConfig": "New content available!",

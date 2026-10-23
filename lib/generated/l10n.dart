@@ -9027,6 +9027,16 @@ class S {
     );
   }
 
+  /// `We couldn't load this right now. Please try again.`
+  String get couldNotLoadContent {
+    return Intl.message(
+      'We couldn\'t load this right now. Please try again.',
+      name: 'couldNotLoadContent',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Failed to load application configuration. Please try again or restart your application.`
   String get failedToLoadAppConfig {
     return Intl.message(

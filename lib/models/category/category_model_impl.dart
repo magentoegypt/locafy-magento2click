@@ -26,6 +26,18 @@ class CategoryModelImpl extends CategoryModel {
 
   List<Category>? _allCategories;
 
+  Object? _loadError;
+
+  @override
+  Object? get loadError => _loadError;
+
+  // The arguments of the last getCategories, so reloadCategories can repeat
+  // the same request without its caller having to know them.
+  dynamic _lastLang;
+  dynamic _lastSortingList;
+  dynamic _lastCategoryLayout;
+  List<Map>? _lastRemapCategories;
+
   /// Format the Category List and assign the List by Category ID
   @override
   void sortCategoryList(
@@ -120,8 +132,13 @@ class CategoryModelImpl extends CategoryModel {
     categoryLayout,
     List<Map>? remapCategories,
   }) async {
+    _lastLang = lang;
+    _lastSortingList = sortingList;
+    _lastCategoryLayout = categoryLayout;
+    _lastRemapCategories = remapCategories;
     try {
       printLog('[Category] getCategories');
+      _loadError = null;
       isLoading = true;
       notifyListeners();
       _allCategories = await _service.api.getCategories(lang: lang);
@@ -141,9 +158,21 @@ class CategoryModelImpl extends CategoryModel {
       notifyListeners();
     } catch (err) {
       isLoading = false;
-      //notifyListeners();
+      _loadError = err;
+      // This used to be commented out, so a failed load never told anyone it
+      // had stopped: listeners kept whatever the loading state implied, with
+      // no way to show that the request had failed.
+      notifyListeners();
     }
   }
+
+  @override
+  Future<void> reloadCategories() => getCategories(
+        lang: _lastLang,
+        sortingList: _lastSortingList,
+        categoryLayout: _lastCategoryLayout,
+        remapCategories: _lastRemapCategories,
+      );
 
   @override
   List<Category>? getCategory({required String parentId}) {

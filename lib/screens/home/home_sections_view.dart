@@ -9,6 +9,7 @@ import '../../models/entities/back_drop_arguments.dart';
 import '../../models/entities/home_section.dart';
 import '../../routes/flux_navigate.dart';
 import '../../services/index.dart';
+import '../../widgets/common/load_error_view.dart';
 import '../../widgets/common/webview.dart';
 import '../../widgets/home/home_sections.dart';
 import '../brands/all_brands_screen.dart';
@@ -98,7 +99,11 @@ class _HomeSectionsViewState extends State<HomeSectionsView> {
   Future<void> _reload() async {
     final future = _fetchSections(context);
     setState(() => _future = future);
-    await future;
+    // The FutureBuilder below renders a failure. Rethrowing it from here would
+    // only reach RefreshIndicator, which has nothing to do with it.
+    try {
+      await future;
+    } catch (_) {}
   }
 
   @override
@@ -128,6 +133,11 @@ class _HomeSectionsViewState extends State<HomeSectionsView> {
                 const HeaderAuthButtons(),
                 if (loading)
                   const _HomeShimmer()
+                // Checked after `loading`: a retry keeps the previous error on
+                // the snapshot while the new request is in flight, and that
+                // should show the shimmer, not the stale error.
+                else if (snapshot.hasError)
+                  LoadErrorView(error: snapshot.error, onRetry: _reload)
                 else ...[
                   for (final b in banners)
                     HomeBannerHero(

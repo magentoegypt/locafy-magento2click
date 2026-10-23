@@ -26,6 +26,14 @@ abstract class CategoryModel extends ListCategoryModel {
 
   List<Category>? getCategory({required String parentId});
 
+  /// Why the last [getCategories] failed, or null when it succeeded or is
+  /// still running. Lets a screen tell "couldn't load" apart from "this
+  /// store has no categories" and offer a retry instead of rendering blank.
+  Object? get loadError;
+
+  /// Runs [getCategories] again with the arguments it was last called with.
+  Future<void> reloadCategories();
+
   /// Optimize
 
   void initSubcategory(Category category, {bool fetchData = false}) {}

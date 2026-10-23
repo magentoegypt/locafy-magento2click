@@ -1021,6 +1021,13 @@ class MagentoService extends BaseServices {
         brandIds.add(element.value);
       }
       var response = await categoriesFuture;
+      // makeRequest only throws on a 404, so a refused (403) or failed request
+      // arrives here as an ordinary response. Treat it as the failure it is;
+      // building nothing from it read as "this store has no categories".
+      if (response.statusCode != 200) {
+        // ignore: only_throw_errors
+        throw 'Categories request failed: HTTP ${response.statusCode}';
+      }
       var list = <Category>[];
       if (response.statusCode == 200) {
         for (var item in convert.jsonDecode(response.body)['children_data']) {
@@ -1171,19 +1178,20 @@ class MagentoService extends BaseServices {
   /// (`GET mstore/homepage-sections`): a list of groups of typed sections
   /// (banner / category / brands). Rendered banner -> category -> brands; the
   /// brands section is shared by the home and main-category screens.
+  /// Throws when the sections can't be fetched, rather than returning an empty
+  /// list: a refused request, an error status and a dropped connection all used
+  /// to come back as `[]`, which the home screen can't tell apart from a home
+  /// page with nothing on it, so it rendered blank instead of offering a retry.
   Future<List<HomeSection>> fetchHomepageSections({String? lang}) async {
-    try {
-      final response = await httpGet(
-        MagentoHelper.buildUrl(domain, 'mstore/homepage-sections', lang)!,
-        headers: {'Authorization': 'Bearer $accessToken'},
-      );
-      if (response.statusCode == 200) {
-        return HomeSection.parseResponse(convert.jsonDecode(response.body));
-      }
-      return [];
-    } catch (_) {
-      return [];
+    final response = await httpGet(
+      MagentoHelper.buildUrl(domain, 'mstore/homepage-sections', lang)!,
+      headers: {'Authorization': 'Bearer $accessToken'},
+    );
+    if (response.statusCode != 200) {
+      // ignore: only_throw_errors
+      throw 'Homepage sections request failed: HTTP ${response.statusCode}';
     }
+    return HomeSection.parseResponse(convert.jsonDecode(response.body));
   }
 
   /// Cache for [resolveCategoryUrls], keyed by `lang|url path`. A null value

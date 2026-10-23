@@ -70,4 +70,12 @@ class MainCategoryModel extends ListCategoryModel implements CategoryModel {
 
   @override
   void refreshCategoryList() => refresh(autoGetData: false);
+
+  // Loads through PagingDataProvider, which catches its own failures and
+  // keeps no error to report, so there is nothing to surface here.
+  @override
+  Object? get loadError => null;
+
+  @override
+  Future<void> reloadCategories() => getData();
 }
