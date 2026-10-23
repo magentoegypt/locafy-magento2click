@@ -273,9 +273,12 @@ class _CategorySearchState<T> extends State<CategorySearch> with AppBarMixin {
                        onChanged: _onSearchTextChange,
                        decoration: InputDecoration(
                          hintText:S.of(context).search, //'بحث',
-                         prefixIcon: const Icon(Icons.search),
+                         prefixIcon: const Icon(Icons.search,
+                             color: kPapyrusBrownLight),
                          filled: true,
-                         fillColor: Colors.grey.shade200,
+                         // Cream with a brown icon, like the website's search
+                         // input; the hint already takes the theme's brown.
+                         fillColor: kPapyrusCream,
                          contentPadding: const EdgeInsets.symmetric(vertical: 0),
                          border: OutlineInputBorder(
                            borderRadius: BorderRadius.circular(12),
@@ -333,8 +336,10 @@ class _CategorySearchState<T> extends State<CategorySearch> with AppBarMixin {
                                 padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                                 decoration: BoxDecoration(
                                   border: Border(
+                                    // Olive indicator, brown label, lighter brown
+                                    // when unselected -- the app's TabBarTheme.
                                     bottom: BorderSide(
-                                      color: isSelected ? Colors.black : Colors.transparent,
+                                      color: isSelected ? kPapyrusOlive : Colors.transparent,
                                       width: 2,
                                     ),
                                   ),
@@ -342,7 +347,7 @@ class _CategorySearchState<T> extends State<CategorySearch> with AppBarMixin {
                                 child: Text(
                                   tabs[index]!,
                                   style: TextStyle(
-                                    color: isSelected ? Colors.black : Colors.grey,
+                                    color: isSelected ? kPapyrusBrown : kPapyrusBrownLight,
                                     fontWeight:
                                     isSelected ? FontWeight.bold : FontWeight.normal,
                                     fontSize: 16,
@@ -418,17 +423,17 @@ class _CategorySearchState<T> extends State<CategorySearch> with AppBarMixin {
         margin: const EdgeInsets.all(15),
         height: 50,
         decoration: BoxDecoration(
-          color: Colors.grey[200],
+          color: kPapyrusCream,
           borderRadius: BorderRadius.circular(30),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            const Icon(Icons.search, color: Colors.grey),
+            const Icon(Icons.search, color: kPapyrusBrownLight),
             const SizedBox(width: 10),
             Text(
               S.of(context).search,
-              style: TextStyle(color: Colors.grey[600], fontSize: 16),
+              style: const TextStyle(color: kPapyrusBrownLight, fontSize: 16),
             ),
           ],
         ),
